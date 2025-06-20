@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Event Booster</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
@@ -24,7 +24,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/main.min.css" />
+    <link rel="stylesheet" href="./css/styles.min.css" />
   </head>
   <body>
     <header class="header">
@@ -40,6 +40,9 @@
               class="header-search__input header-search__input--event"
               placeholder="Start searching"
             />
+            <svg class="header-search__icon">
+              <use href="./images/icons/symbol-defs.svg#icon-search"></use>
+            </svg>
           </div>
           <div class="header-search-choose-container">
             <input
@@ -47,11 +50,60 @@
               class="header-search__input header-search__input--choose-country"
               placeholder="Choose country"
             />
+            <svg class="header-search__icon">
+              <use href="./images/icons/symbol-defs.svg#icon-choose"></use>
+            </svg>
           </div>
         </div>
       </div>
     </header>
-    <main class="main"></main>
+    <main class="main">
+      <div class="container">
+        <ul class="main-list">
+          <!-- <li class="main-list__item">
+            <div class="main-list__thumb">
+              <img
+                src="./images/example.png"
+                alt="example"
+                class="main-list__img"
+              />
+            </div>
+            <h3 class="main-list__title">Eurovision 2021 finals!</h3>
+            <p class="main-list__date">2021-05-13</p>
+            <address class="main-list-locate">
+              <svg class="main-list-locate__icon">
+                <use href="./images/icons/symbol-defs.svg#icon-locate"></use>
+              </svg>
+              Palace of Ukraine
+            </address>
+          </li> -->
+        </ul>
+
+        <ul class="slider">
+          <!-- <li class="slider__item">
+            <button type="button" class="slider__btn active">1</button>
+          </li>
+          <li class="slider__item">
+            <button type="button" class="slider__btn">2</button>
+          </li>
+          <li class="slider__item">
+            <button type="button" class="slider__btn">3</button>
+          </li>
+          <li class="slider__item">
+            <button type="button" class="slider__btn">4</button>
+          </li>
+          <li class="slider__item">
+            <button type="button" class="slider__btn">5</button>
+          </li>
+          <li class="slider__item">
+            <p class="slider__text">...</p>
+          </li>
+          <li class="slider__item">
+            <button type="button" class="slider__btn">29</button>
+          </li> -->
+        </ul>
+      </div>
+    </main>
     <footer class="footer">
       <div class="container">
         <p class="footer__text">
@@ -59,5 +111,9 @@
         </p>
       </div>
     </footer>
+
+    <script src="./js/main.js" type="module"></script>
+    <script src="./js/modal.js" type="module"></script>
+    <script src="./js/slider.js" type="module"></script>
   </body>
 </html>
