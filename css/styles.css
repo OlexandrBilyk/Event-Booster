@@ -187,6 +187,9 @@ input:focus {
   font-weight: 400;
   font-size: 16px;
   color: #939393;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 .header-search__icon {
   position: absolute;
@@ -195,6 +198,9 @@ input:focus {
   width: 12px;
   height: 12px;
   fill: #939393;
+}
+.header-search__icon--choose {
+  right: 20px;
 }
 
 .main {

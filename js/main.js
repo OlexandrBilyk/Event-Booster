@@ -1,5 +1,5 @@
 const list = document.querySelector(".main-list");
-const apiKey = "kIQL6ZGDiLwlRATyJnfEFaxKyK6k62iQ";
+export const apiKey = "kIQL6ZGDiLwlRATyJnfEFaxKyK6k62iQ";
 async function getEvents(page = 0) {
   try {
     const response = await fetch(
@@ -16,14 +16,14 @@ async function getEvents(page = 0) {
     console.log(error);
   }
 }
-export async function getPages(){
+export async function getPages() {
   try {
     const response = await fetch(
       `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${apiKey}`
     );
     const data = await response.json();
 
-    const pages =  data.page.totalPages
+    const pages = data.page.totalPages;
 
     return pages;
   } catch (error) {
@@ -57,6 +57,28 @@ export async function renderEvents(num) {
       `
     );
   });
+}
+async function searchEvents(keyword, countryCode, page = 0) {
+  try {
+    const url = new URL(
+      "https://app.ticketmaster.com/discovery/v2/events.json"
+    );
+    url.searchParams.set("apikey", apiKey);
+    if (keyword) url.searchParams.set("keyword", keyword);
+    if (countryCode) url.searchParams.set("countryCode", countryCode);
+    url.searchParams.set("page", page);
+    url.searchParams.set("size", 20);
+
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`Помилка: ${response.status}`);
+
+    const data = await response.json();
+
+    return data._embedded?.events || [];
+  } catch (err) {
+    console.error("Не вдалося завантажити події:", err);
+    return [];
+  }
 }
 
 renderEvents(1);

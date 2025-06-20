@@ -124,6 +124,7 @@
     font-weight: 400;
     font-size: 16px;
     color: #939393;
+    appearance: none;
   }
 
   &__icon {
@@ -134,5 +135,9 @@
     width: 12px;
     height: 12px;
     fill: #939393;
+
+    &--choose {
+      right: 20px;
+    }
   }
 }

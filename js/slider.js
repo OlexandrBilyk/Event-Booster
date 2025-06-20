@@ -22,14 +22,16 @@ const btns = [
     isActive: false,
   },
   {
-    text: await getPages() ,
+    text: await getPages(),
     isActive: false,
   },
-//   {
-//     text: 13700 ,
-//     isActive: false,
-//   },
+  //   {
+  //     text: 13700 ,
+  //     isActive: false,
+  //   },
 ];
+
+
 const btnsContainer = document.querySelector(".slider");
 function renderBtns() {
   btnsContainer.innerHTML = "";
@@ -87,5 +89,6 @@ function addListeners() {
     });
   });
 }
+
 renderBtns();
 addListeners();

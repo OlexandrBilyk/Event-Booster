@@ -45,12 +45,13 @@
             </svg>
           </div>
           <div class="header-search-choose-container">
-            <input
-              type="text"
+            <select
               class="header-search__input header-search__input--choose-country"
-              placeholder="Choose country"
-            />
-            <svg class="header-search__icon">
+              id="countrySelect"
+            >
+              <option value="">Виберіть країну</option>
+            </select>
+            <svg class="header-search__icon header-search__icon--choose">
               <use href="./images/icons/symbol-defs.svg#icon-choose"></use>
             </svg>
           </div>
@@ -112,8 +113,10 @@
       </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <script src="./js/main.js" type="module"></script>
     <script src="./js/modal.js" type="module"></script>
+    <script src="./js/search.js" type="module"></script>
     <script src="./js/slider.js" type="module"></script>
   </body>
 </html>
