@@ -52,11 +52,11 @@ const isCountrySelected = function () {
 function renderBtns() {
   btnsContainer.innerHTML = "";
 
-  const maxText = Math.max(...btns.map((el) => el.text));
+  const maxText = btns[btns.length - 1].text;
 
   btns.forEach((el, i) => {
     if (el.text > maxText) return;
-
+    
     if (i === btns.length - 1) {
       btnsContainer.insertAdjacentHTML(
         "beforeend",
@@ -130,6 +130,7 @@ async function performSmartSearch(page = 0) {
     renderBtns();
     addListeners();
   } else {
+    btns[btns.length - 1].text = await getPages();
     renderEvents(page);
     renderBtns();
     addListeners();

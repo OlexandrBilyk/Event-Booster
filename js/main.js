@@ -29,7 +29,7 @@ export async function getPages(keyword = "", countryCode = "") {
     const response = await fetch(url);
     const data = await response.json();
 
-    const pages = data.page?.totalPages || 0;
+    const pages = data.page?.totalPages;
     return pages;
   } catch (error) {
     console.log("Помилка при підрахунку сторінок:", error);
