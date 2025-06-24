@@ -52,12 +52,14 @@ const isCountrySelected = function () {
 function renderBtns() {
   btnsContainer.innerHTML = "";
 
+  const addedBtns = [];
   const maxText = btns[btns.length - 1].text;
 
   btns.forEach((el, i) => {
-    if (el.text > maxText) return;
-    
-    if (i === btns.length - 1) {
+    if (el.text >= maxText && i !== btns.indexOf(btns[btns.length - 1])) return;
+    console.log(addedBtns, "Кнопочки");
+
+    if (i === btns.length - 1 && addedBtns.length !== 0) {
       btnsContainer.insertAdjacentHTML(
         "beforeend",
         `
@@ -78,8 +80,10 @@ function renderBtns() {
         </li>
       `
     );
+    addedBtns.push(el.text);
   });
 }
+
 function addListeners() {
   const Dombtns = document.querySelectorAll(".slider__btn");
 
